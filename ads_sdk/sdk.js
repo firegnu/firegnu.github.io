@@ -49,9 +49,9 @@ console.log("set spatialNavigationEnabled true");
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
-  // var adFrameSrc = "https://jioads.akamaized.net/betasdk/kaiDisplayAds/testHtml/frame.html";
+  var adFrameSrc = "https://jioads.akamaized.net/betasdk/kaiDisplayAds/testHtml/frame.html";
   // var adFrameSrc = 'http://127.0.0.1:3000/ads_sdk/frame.html';
-  var adFrameSrc = 'https://firegnu.github.io/ads_sdk/frame.html';
+  // var adFrameSrc = 'https://firegnu.github.io/ads_sdk/frame.html';
   let handlers = {};
 
   const getActiveAdFrame = () => {
