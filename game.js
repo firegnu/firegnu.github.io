@@ -462,7 +462,7 @@ var game_start = {
   },
   create: function () {
     game.forceSingleUpdate = false;
-    
+
     this.background = game.add.tileSprite(0, 0, 447, 320, 'background');
     this.currentScore = 0;
     this.highScore = localStorage.getItem('birdy-score');
@@ -791,7 +791,7 @@ var splash = {
         var sounds = [];
         game.jumpSound = game.add.audio('jump');
         game.noSound = game.add.audio('noSound');
-    
+
         sounds = [
             game.jumpSound,
             game.noSound
@@ -837,7 +837,7 @@ var splash = {
         game.load.image('pause-board', 'assets/board.png');
         game.load.image('focus', 'assets/focus-1.png');
         game.load.image('on', 'assets/selector-on.png');
-        game.load.image('off', 'assets/selector-off.png');    
+        game.load.image('off', 'assets/selector-off.png');
         game.load.spritesheet('bird', 'assets/birdy.png', 76.42, 38);
 
         this.loadSound();
@@ -848,7 +848,7 @@ var ads = {
   init: function (adname) {
     this.adname = adname;
   },
-  create: function () {  
+  create: function () {
     game.sound.mute = true;
     var onAdFinished = function () {
       game.sound.mute = false;
@@ -1229,13 +1229,13 @@ Render.Confirm = {
           Render.Confirm.hide();
         },
         softRight: function () {
-          window.close();
+          parent.window.close();
         },
         backspace: function () {
           Render.Confirm.hide();
         },
         endCall: function () {
-          window.close();
+          parent.window.close();
         }
       }
     });
@@ -1278,7 +1278,7 @@ Render.YouLose = {
         rsk: locale.getLocale('playAgain')
       },
       action: {
-        //get actions from game_start 
+        //get actions from game_start
 
         softLeft: function () {
           Render.YouLose.hide();
