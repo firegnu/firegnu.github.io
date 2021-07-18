@@ -65,6 +65,7 @@ const KaiDisplayAdsSdk = (frameID) => {
    * @returns
    */
   const onKeydown = (e) => {
+    console.log('.................................sdk onKeydown000!!!!!');
     const frame = getActiveAdFrame();
     if (!frame) {
       return;
@@ -75,7 +76,8 @@ const KaiDisplayAdsSdk = (frameID) => {
       e.preventDefault();
       e.stopPropagation();
     }
-    //console.log(e);
+    console.log('.................................sdk onKeydown111!!!!!');
+    console.log(e);
 
     frame.contentWindow.postMessage(
       JSON.stringify({
