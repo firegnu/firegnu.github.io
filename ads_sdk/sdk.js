@@ -123,7 +123,7 @@ const KaiDisplayAdsSdk = (frameID) => {
     if (payload.event === "close") {
       const frame = getActiveAdFrame();
       if (frame) {
-        frame.remove();
+        // frame.remove();
       }
     }
     if (payload.event === "viewability") {
