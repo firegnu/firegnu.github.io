@@ -1,1 +1,30 @@
-Hello World
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="user-scalable=no,width=device-width"/>
+
+  <link rel="stylesheet" href="style/style.css" type="text/css">
+  <link rel="prefetch" type="application/l10n" href="locales/locales.ini" />
+  <link rel="stylesheet" href="ads/css/kaios_style.css" type="text/css">
+
+
+  <script src="ads/sdk.js"></script>
+
+  <!-- jio new sdk -->
+<!--  <script src="ads_sdk/addata-min.js"></script>-->
+  <script src="ads_sdk/getDataStore.js"></script>
+  <script src="ads_sdk/sdk.js"></script>
+
+  <title>Birdy Game</title>
+</head>
+<body>
+  <center id="container">
+    <div class="holds-the-iframe" id="adsWrapper"></div>
+    <div id ="phaser-game"></div>
+  </center>
+  <script type="text/javascript" src="shared/js/l10n.js"></script>
+  <script type="text/javascript" src="vendor.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+</body>
+</html>

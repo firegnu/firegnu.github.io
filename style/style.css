@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: 'Riffic Bold';
+  src: url("../font/riffic-bold.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url("../font/OpenSans-ExtraBold.ttf");
+  font-style: normal;
+}
+
+
+
+html, body {
+  background-color: #000000;
+  font-family: 'Riffic Bold';
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  border:none;
+}
+
+iframe[id^="vmx-frameInt_"] {
+  position: relative;
+  top: 26px;
+  background-color: black;
+}
+
+.holds-the-iframe {
+    background:url(../assets/loading.png) center center no-repeat;
+}
