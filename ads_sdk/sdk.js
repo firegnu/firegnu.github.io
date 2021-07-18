@@ -92,7 +92,8 @@ const KaiDisplayAdsSdk = (frameID) => {
    * @returns
    */
   const onMessage = (e) => {
-    //console.log(e);
+    console.log('.................................sdk OnMessage!!!!!');
+    console.log(e);
 
     // Validation of messages
     // if (e.origin !== adFrameOrigin) {
