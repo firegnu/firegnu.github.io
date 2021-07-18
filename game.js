@@ -717,6 +717,7 @@ var menu = {
   softkey: null,
   locale: null,
   preload: function () {
+    console.log('.............................menu scene.... preload');
     // Temporary stop the system music
     var sound = this.loadSound();
     if (sound && !game.noSound.isPlaying && !game.noSound.mute) {
@@ -728,6 +729,7 @@ var menu = {
     game.softkey.defaultHandler['3'] = function(){ navigator.volumeManager && navigator.volumeManager.requestUp() };
   },
   create: function () {
+    console.log('.............................menu scene.... create');
     game.add.tileSprite(0, 0, 240, 320, 'bg');
     this.renderText();
     this.bind();
@@ -851,6 +853,10 @@ var ads = {
   create: function () {
     game.sound.mute = true;
     var onAdFinished = function () {
+      console.log('...................................debugger!!');
+      console.log('enter onAdFinished!');
+      console.log('game.ads.nextState');
+      console.log(game.ads.nextState);
       game.sound.mute = false;
       game.state.start(game.ads.nextState);
     };
