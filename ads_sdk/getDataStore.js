@@ -8,6 +8,7 @@ window.addEventListener('load', function() {
   var jioSDK = new Jiogames();
   console.log('.............................................');
   console.log(jioSDK);
+  window.jio_SDK = jioSDK;
   var userdata = jioSDK.getVmaxUserData();
   if (userdata != null) {
     console.log("userdata ", userdata);

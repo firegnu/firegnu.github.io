@@ -1229,13 +1229,14 @@ Render.Confirm = {
           Render.Confirm.hide();
         },
         softRight: function () {
-          parent.window.close();
+          // parent.window.close();
+          window.jio_SDK.exit();
         },
         backspace: function () {
           Render.Confirm.hide();
         },
         endCall: function () {
-          parent.window.close();
+          window.jio_SDK.window.close();
         }
       }
     });
