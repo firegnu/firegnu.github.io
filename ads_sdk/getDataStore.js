@@ -6,6 +6,8 @@
 // window.uid = '5090436833';
 window.addEventListener('load', function() {
   var jioSDK = new Jiogames();
+  console.log('.............................................');
+  console.log(jioSDK);
   var userdata = jioSDK.getVmaxUserData();
   if (userdata != null) {
     console.log("userdata ", userdata);
