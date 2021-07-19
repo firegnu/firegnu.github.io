@@ -851,14 +851,17 @@ var ads = {
     this.adname = adname;
   },
   create: function () {
-    game.sound.mute = true;
+    // game.sound.mute = true;
     var onAdFinished = function () {
       console.log('...................................debugger!!');
       console.log('enter onAdFinished!');
       console.log('game.ads.nextState');
       console.log(game.ads.nextState);
-      game.sound.mute = false;
-      game.state.start(game.ads.nextState);
+      // game.sound.mute = false;
+      setTimeout(function() {
+        console.log('....................debugger...start enter the next state.........................');
+        game.state.start(game.ads.nextState);
+      }, 0);
     };
     game.ads.showAds({
       adname: this.adname,
