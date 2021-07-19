@@ -1245,7 +1245,7 @@ Render.Confirm = {
           Render.Confirm.hide();
         },
         endCall: function () {
-          window.jio_SDK.window.close();
+          window.jio_SDK.exit();
         }
       }
     });

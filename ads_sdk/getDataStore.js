@@ -1,11 +1,22 @@
-// navigator.connection = {
-//   type: 'wifi',
-//   ontypechange: () => {}
-// }
-// window.advid = '0735043d-42a1-4108-828d-e5bc4f707807';
-// window.uid = '5090436833';
 window.addEventListener('load', function() {
-  var jioSDK = new Jiogames();
+  /*
+  var jioOptions = {
+    "gameName": "Birdy",
+    "gameVersion": "1.2.7",
+    "autoControl": ["volume", "exit"]
+};
+
+var jioSDK;
+if (window.Jiogames) {
+    jioSDK = new window.Jiogames(jioOptions);
+}
+   */
+  var jioOptions = {
+    "gameName": "Birdy",
+    "gameVersion": "1.2.7",
+    "autoControl": ["volume", "exit"]
+  };
+  var jioSDK = new Jiogames(jioOptions);
   console.log('.............................................');
   console.log(jioSDK);
   window.jio_SDK = jioSDK;
