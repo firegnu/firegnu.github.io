@@ -11,12 +11,12 @@ if (window.Jiogames) {
     jioSDK = new window.Jiogames(jioOptions);
 }
    */
-  var jioOptions = {
-    "gameName": "Birdy",
-    "gameVersion": "1.2.7",
-    "autoControl": ["volume", "exit"]
-  };
-  var jioSDK = new Jiogames(jioOptions);
+  // var jioOptions = {
+  //   "gameName": "Birdy",
+  //   "gameVersion": "1.2.7",
+  //   "autoControl": ["volume", "exit"]
+  // };
+  var jioSDK = new Jiogames();
   console.log('.............................................');
   console.log(jioSDK);
   window.jio_SDK = jioSDK;
