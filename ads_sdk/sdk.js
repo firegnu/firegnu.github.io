@@ -68,11 +68,6 @@ const KaiDisplayAdsSdk = (frameID) => {
     console.log('.................................sdk onKeydown000!!!!!');
     const frame = getActiveAdFrame();
     if (!frame) {
-      console.log('.................................sdk onKeydown000   no frame!!!!!');
-      const ignoreKeys1 = ["EndCall", "SoftRight", "Backspace"];
-      if (ignoreKeys1.indexOf(e.key) >= 0) {
-        console.log('.................................sdk onKeydown000   start to exit!!!!!');
-      }
       return;
     }
     // Prevent main frame from handling these keys - just let ad frame handle it
@@ -132,6 +127,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       if (frame) {
         frame.remove();
         console.log('....................................remove keydown event');
+        window.removeEventListener("keydown", onKeydown);
       }
     }
     if (payload.event === "viewability") {
