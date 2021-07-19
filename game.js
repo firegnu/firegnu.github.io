@@ -156,7 +156,7 @@ Phaser.Plugin.Softkey.prototype._keyPress = function (e, arg) {
     case 'SoftRight':
       if(arg.softRight){
         keyHandler = arg.softRight;
-        // e.preventDefault();
+        e.preventDefault();
       }
       break;
     case 'Backspace':
