@@ -860,6 +860,7 @@ var ads = {
       // game.sound.mute = false;
       setTimeout(function() {
         console.log('....................debugger...start enter the next state.........................');
+        console.log(document.activeElement);
         game.state.start(game.ads.nextState);
       }, 0);
     };
@@ -914,9 +915,10 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
     ifrm.setAttribute('style', 'border: none;');
     document.getElementById(this.adsWrapperId).appendChild(ifrm);
     const kaiJioAds = KaiDisplayAdsSdk('iframe-ads');
-    console.log('.......................................................');
+    console.log('.......................................................before ads.....');
     console.log(window.advid);
     console.log(window.uid);
+    console.log(document.activeElement);
     kaiJioAds.init({
       banner: {
         w: window.screen.width,
