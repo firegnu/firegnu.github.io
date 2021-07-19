@@ -1239,7 +1239,8 @@ Render.Confirm = {
         },
         softRight: function () {
           // parent.window.close();
-          window.jio_SDK.exit();
+          // window.jio_SDK.exit();
+          top.close();
           // window.close();
         },
         backspace: function () {
