@@ -918,8 +918,8 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
       banner: {
         w: window.screen.width,
         h: (window.screen.height - 26), // top bar 26px deducted
-        adspotkey: 'a789b721',
-        pkgname: 'com.jio.test',
+        adspotkey: '78eab85a',
+        pkgname: 'com.kaiostech.birdy',
         adrefresh: 0,
         customData: '', // '{"key1": "Some key value to be sent", "key2": "Some key2 value to be sent"}'
         advid: window.advid,
