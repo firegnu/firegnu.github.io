@@ -856,6 +856,7 @@ var ads = {
       console.log('...................................debugger!!');
       console.log('enter onAdFinished!');
       console.log('game.ads.nextState');
+      window.focus();
       // game.sound.mute = false;
         console.log('....................debugger...start enter the next state.........................');
         game.state.start(game.ads.nextState);
