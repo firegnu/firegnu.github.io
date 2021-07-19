@@ -126,6 +126,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
+        document.body.removeEventListener("keydown", handleKeydownEvent);
       }
     }
     if (payload.event === "viewability") {
