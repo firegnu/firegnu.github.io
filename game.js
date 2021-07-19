@@ -1239,13 +1239,15 @@ Render.Confirm = {
         },
         softRight: function () {
           // parent.window.close();
-          window.jio_SDK.exit();
+          // window.jio_SDK.exit();
+          window.close();
         },
         backspace: function () {
           Render.Confirm.hide();
         },
         endCall: function () {
-          window.jio_SDK.exit();
+          // window.jio_SDK.exit();
+          window.close();
         }
       }
     });
