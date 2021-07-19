@@ -858,11 +858,10 @@ var ads = {
       console.log('game.ads.nextState');
       console.log(game.ads.nextState);
       // game.sound.mute = false;
-      setTimeout(function() {
+        document.preFocusElement.focus();
         console.log('....................debugger...start enter the next state.........................');
         console.log(document.activeElement);
         game.state.start(game.ads.nextState);
-      }, 0);
     };
     game.ads.showAds({
       adname: this.adname,
@@ -900,6 +899,7 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
   if (
     true
   ) {
+    window.preFocusElement = document.activeElement;
     const timeout = setTimeout(function() {
       const frame = document.getElementById('iframe-ads');
       if (frame) {
