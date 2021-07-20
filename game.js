@@ -717,8 +717,8 @@ var menu = {
   softkey: null,
   locale: null,
   preload: function () {
-    console.log('.............................menu scene.... preload');
     // Temporary stop the system music
+    console.log('....................................enter menu preload..............');
     var sound = this.loadSound();
     if (sound && !game.noSound.isPlaying && !game.noSound.mute) {
       game.noSound.play('', 0, 0.4, true);
@@ -729,7 +729,7 @@ var menu = {
     game.softkey.defaultHandler['3'] = function(){ navigator.volumeManager && navigator.volumeManager.requestUp() };
   },
   create: function () {
-    console.log('.............................menu scene.... create');
+    console.log('....................................enter menu create..............');
     game.add.tileSprite(0, 0, 240, 320, 'bg');
     this.renderText();
     this.bind();
@@ -774,92 +774,88 @@ var menu = {
 };
 
 var splash = {
-    preload: function () {
-        game.navigator = game.plugins.add(Phaser.Plugin.Navigator);
-    },
-    create: function () {
-        game.load.onLoadComplete.addOnce(function () {
-            this.decode(game, this, function() {
-                game.init = true;
-                game.jumpSound.volume = 0.4;
-                game.ads.nextState = 'menu';
-                game.state.start('ads', true, false, 'splash');
-            });
-        }, this);
+  preload: function () {
+    game.navigator = game.plugins.add(Phaser.Plugin.Navigator);
+  },
+  create: function () {
+    game.load.onLoadComplete.addOnce(function () {
+      this.decode(game, this, function() {
+        game.init = true;
+        game.jumpSound.volume = 0.4;
+        game.ads.nextState = 'menu';
+        game.state.start('ads', true, false, 'splash');
+      });
+    }, this);
 
-        this.start();
-    },
-    decode: function (game, context, callback) {
-        var sounds = [];
-        game.jumpSound = game.add.audio('jump');
-        game.noSound = game.add.audio('noSound');
+    this.start();
+  },
+  decode: function (game, context, callback) {
+    var sounds = [];
+    game.jumpSound = game.add.audio('jump');
+    game.noSound = game.add.audio('noSound');
 
-        sounds = [
-            game.jumpSound,
-            game.noSound
-        ];
-        game.sound.setDecodedCallback(sounds, function() {
-            callback();
-        }, context);
-    },
-    loadSound: function () {
-        game.load.audio('jump', ['assets/jump.wav']);
-        game.load.audio('noSound', ['assets/nosound.mp3']);
-    },
-    start: function () {
-        // Menu
-        game.load.image('bg', 'assets/bg-home.png');
+    sounds = [
+      game.jumpSound,
+      game.noSound
+    ];
+    game.sound.setDecodedCallback(sounds, function() {
+      callback();
+    }, context);
+  },
+  loadSound: function () {
+    game.load.audio('jump', ['assets/jump.wav']);
+    game.load.audio('noSound', ['assets/nosound.mp3']);
+  },
+  start: function () {
+    // Menu
+    game.load.image('bg', 'assets/bg-home.png');
 
-        // Options
-        game.load.image('bg', 'assets/generic-bg.png');
-        game.load.image('options-board', 'assets/board.png');
-        game.load.image('on', 'assets/selector-on.png');
-        game.load.image('off', 'assets/selector-off.png');
-        game.load.image('focus', 'assets/focus-1.png');
+    // Options
+    game.load.image('bg', 'assets/generic-bg.png');
+    game.load.image('options-board', 'assets/board.png');
+    game.load.image('on', 'assets/selector-on.png');
+    game.load.image('off', 'assets/selector-off.png');
+    game.load.image('focus', 'assets/focus-1.png');
 
-        // Score
-        game.load.image('bg', 'assets/generic-bg.png');
-        game.load.image('pause-board', 'assets/board.png');
+    // Score
+    game.load.image('bg', 'assets/generic-bg.png');
+    game.load.image('pause-board', 'assets/board.png');
 
-        // About
-        game.load.image('bg', 'assets/generic-bg.png');
-        game.load.image('about-board', 'assets/board.png');
-        game.load.image('kaios', 'assets/kaios-logo.png');
+    // About
+    game.load.image('bg', 'assets/generic-bg.png');
+    game.load.image('about-board', 'assets/board.png');
+    game.load.image('kaios', 'assets/kaios-logo.png');
 
-        // Game Start
-        game.load.image('logo', 'assets/birdy-logo.png');
-        game.load.image('obstacle-up', 'assets/obstacle-up.png');
-        game.load.image('obstacle-down', 'assets/obstacle-down.png');
-        game.load.image('background', 'assets/game-scenario.png');
-        game.load.image('gameOverScore', 'assets/ctn-game-over-board.png');
-        game.load.image('bg-dialog', 'assets/dialog.png');
-        game.load.image('bg-game-over', 'assets/bg-game-over.png');
-        game.load.image('bg-options', 'assets/bg-options.png');
-        game.load.image('bg-exit', 'assets/bg-exit.png');
-        game.load.image('pause-board', 'assets/board.png');
-        game.load.image('focus', 'assets/focus-1.png');
-        game.load.image('on', 'assets/selector-on.png');
-        game.load.image('off', 'assets/selector-off.png');
-        game.load.spritesheet('bird', 'assets/birdy.png', 76.42, 38);
+    // Game Start
+    game.load.image('logo', 'assets/birdy-logo.png');
+    game.load.image('obstacle-up', 'assets/obstacle-up.png');
+    game.load.image('obstacle-down', 'assets/obstacle-down.png');
+    game.load.image('background', 'assets/game-scenario.png');
+    game.load.image('gameOverScore', 'assets/ctn-game-over-board.png');
+    game.load.image('bg-dialog', 'assets/dialog.png');
+    game.load.image('bg-game-over', 'assets/bg-game-over.png');
+    game.load.image('bg-options', 'assets/bg-options.png');
+    game.load.image('bg-exit', 'assets/bg-exit.png');
+    game.load.image('pause-board', 'assets/board.png');
+    game.load.image('focus', 'assets/focus-1.png');
+    game.load.image('on', 'assets/selector-on.png');
+    game.load.image('off', 'assets/selector-off.png');
+    game.load.spritesheet('bird', 'assets/birdy.png', 76.42, 38);
 
-        this.loadSound();
-        game.load.start();
-    }
+    this.loadSound();
+    game.load.start();
+  }
 };
 var ads = {
   init: function (adname) {
     this.adname = adname;
   },
   create: function () {
-    // game.sound.mute = true;
+    game.sound.mute = true;
     var onAdFinished = function () {
-      console.log('...................................debugger!!');
-      console.log('enter onAdFinished!');
-      console.log('game.ads.nextState');
+      game.sound.mute = false;
       window.focus();
-      // game.sound.mute = false;
-        console.log('....................debugger...start enter the next state.........................');
-        game.state.start(game.ads.nextState);
+      game.state.start(game.ads.nextState);
     };
     game.ads.showAds({
       adname: this.adname,
@@ -895,9 +891,10 @@ function JioKaiAds(adsWrapperId) {
 
 JioKaiAds.prototype.showAds = function(containerCfg) {
   if (
-    true
+    navigator.connection &&
+    ('wifi' === navigator.connection.type ||
+      'cellular' === navigator.connection.type)
   ) {
-    window.preFocusElement = document.activeElement;
     const timeout = setTimeout(function() {
       const frame = document.getElementById('iframe-ads');
       if (frame) {
@@ -913,10 +910,6 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
     ifrm.setAttribute('style', 'border: none;');
     document.getElementById(this.adsWrapperId).appendChild(ifrm);
     const kaiJioAds = KaiDisplayAdsSdk('iframe-ads');
-    console.log('.......................................................before ads.....');
-    console.log(window.advid);
-    console.log(window.uid);
-    console.log(document.activeElement);
     kaiJioAds.init({
       banner: {
         w: window.screen.width,
@@ -955,36 +948,36 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
 }
 
 var game = new Phaser.Game(
-    240,
-    320,
-    Phaser.CANVAS,
-    'phaser-game'
+  240,
+  320,
+  Phaser.CANVAS,
+  'phaser-game'
 );
 
 
 // Conditional add for scroll Advertisement
 document.addEventListener("keydown", function (e) {
-    e.key === "ArrowDown" && e.preventDefault();
+  e.key === "ArrowDown" && e.preventDefault();
 });
 document.addEventListener("keydown", function (e) {
-    e.key === "ArrowUp" && e.preventDefault();
+  e.key === "ArrowUp" && e.preventDefault();
 });
 
 
 game.custom = Object.freeze({
-    debug: true,
-    fontStyle: Object.freeze({
-        "font": "Open Sans",
-        "fontSize": "20px",
-        "fill": "#FFFFFF",
-        'fontWeight':'600'
-    }),
-    fontSKStyle: Object.freeze({
-      font: 'Open Sans',
-      fontSize: '16px',
-      fontWeight: '600',
-      fill: "#ffffff",
-    })
+  debug: true,
+  fontStyle: Object.freeze({
+    "font": "Open Sans",
+    "fontSize": "20px",
+    "fill": "#FFFFFF",
+    'fontWeight':'600'
+  }),
+  fontSKStyle: Object.freeze({
+    font: 'Open Sans',
+    fontSize: '16px',
+    fontWeight: '600',
+    fill: "#ffffff",
+  })
 });
 
 var Render = {};
@@ -1050,26 +1043,26 @@ game.state.add('score', score);
 game.init = false;
 navigator.mozL10n.ready(function () {
 
-    if (Render.Options.isPaused) {
-      Render.Options.hide();
-    }
-    if (Render.Confirm.isOpen) {
-      Render.Confirm.hide();
-    }
-    if (Render.YouLose.isLose) {
-      Render.YouLose.hide();
-    }
-    game.paused = false;
-    if (!game.init) {
-      game.state.start('splash');
-    } else {
-      game.jumpSound.stop();
-      game.state.start('menu');
-    }
+  if (Render.Options.isPaused) {
+    Render.Options.hide();
+  }
+  if (Render.Confirm.isOpen) {
+    Render.Confirm.hide();
+  }
+  if (Render.YouLose.isLose) {
+    Render.YouLose.hide();
+  }
+  game.paused = false;
+  if (!game.init) {
+    game.state.start('splash');
+  } else {
+    game.jumpSound.stop();
+    game.state.start('menu');
+  }
 
-    // game.paused = false;
-    // game.ads.nextState = 'menu';
-    // game.state.start('ads', true, false, 'splash');
+  // game.paused = false;
+  // game.ads.nextState = 'menu';
+  // game.state.start('ads', true, false, 'splash');
 });
 
 Render.Options = {
@@ -1238,16 +1231,14 @@ Render.Confirm = {
           Render.Confirm.hide();
         },
         softRight: function () {
-          // parent.window.close();
-          // window.jio_SDK.exit();
-          window.close();
+          console.log('.........debugger....quit the game.');
+          parent.window.close();
         },
         backspace: function () {
           Render.Confirm.hide();
         },
         endCall: function () {
-          window.jio_SDK.exit();
-          // window.close();
+          parent.window.close();
         }
       }
     });

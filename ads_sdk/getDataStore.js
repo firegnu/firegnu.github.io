@@ -1,22 +1,7 @@
 window.addEventListener('load', function() {
-  /*
-  var jioOptions = {
-    "gameName": "Birdy",
-    "gameVersion": "1.2.7",
-    "autoControl": ["volume", "exit"]
-};
-
-var jioSDK;
-if (window.Jiogames) {
-    jioSDK = new window.Jiogames(jioOptions);
-}
-   */
-  // var jioOptions = {
-  //   "gameName": "Birdy",
-  //   "gameVersion": "1.2.7",
-  //   "autoControl": ["volume", "exit"]
-  // };
-  var jioSDK = new Jiogames();
+  var jioConf = { "autoControl": ["volume", "exit"], "gameName": "Birdy", "gameVersion": "1.2.7" };
+  var jioSDK = new Jiogames(jioConf);
+  window.jio_gameSDK = jioSDK;
   console.log('.............................................');
   console.log(jioSDK);
   window.jio_SDK = jioSDK;

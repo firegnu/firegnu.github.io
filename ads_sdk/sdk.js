@@ -50,8 +50,6 @@ console.log("set spatialNavigationEnabled true");
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
   var adFrameSrc = "https://jioads.akamaized.net/betasdk/kaiDisplayAds/testHtml/frame.html";
-  // var adFrameSrc = 'http://127.0.0.1:3000/ads_sdk/frame.html';
-  // var adFrameSrc = 'https://firegnu.github.io/ads_sdk/frame.html';
   let handlers = {};
 
   const getActiveAdFrame = () => {
@@ -65,7 +63,6 @@ const KaiDisplayAdsSdk = (frameID) => {
    * @returns
    */
   const onKeydown = (e) => {
-    console.log('.................................sdk onKeydown000!!!!!');
     const frame = getActiveAdFrame();
     if (!frame) {
       return;
@@ -76,8 +73,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       e.preventDefault();
       e.stopPropagation();
     }
-    console.log('.................................sdk onKeydown111!!!!!');
-    console.log(e);
+    //console.log(e);
 
     frame.contentWindow.postMessage(
       JSON.stringify({
@@ -94,8 +90,7 @@ const KaiDisplayAdsSdk = (frameID) => {
    * @returns
    */
   const onMessage = (e) => {
-    console.log('.................................sdk OnMessage!!!!!');
-    console.log(e);
+    //console.log(e);
 
     // Validation of messages
     // if (e.origin !== adFrameOrigin) {
@@ -126,8 +121,6 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        console.log('....................................remove keydown event');
-        window.removeEventListener("keydown", onKeydown);
       }
     }
     if (payload.event === "viewability") {
