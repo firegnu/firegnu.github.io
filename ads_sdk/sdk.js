@@ -47,7 +47,7 @@ function handleKeydownEvent(e) {
 navigator.spatialNavigationEnabled = true;
 console.log("set spatialNavigationEnabled true");
 
-console.log('...........................................................................);
+console.log('...........................................................................');
 console.log(navigator.spatialNavigationEnabled);
 
 const KaiDisplayAdsSdk = (frameID) => {
