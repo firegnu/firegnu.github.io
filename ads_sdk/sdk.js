@@ -49,6 +49,7 @@ console.log("set spatialNavigationEnabled true");
 
 console.log('...........................................................................');
 console.log(navigator.spatialNavigationEnabled);
+console.log(window.parent.navigator.spatialNavigationEnabled)；
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
