@@ -899,7 +899,7 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
         frame.remove();
       }
       clearTimeout(timeout);
-      navigator.spatialNavigationEnabled = false;
+      // navigator.spatialNavigationEnabled = false;
       containerCfg.onAdFinished();
     }, 10000);
 
@@ -922,13 +922,13 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
       listeners: {
         adviewability: function() {
           clearTimeout(timeout);
-          navigator.spatialNavigationEnabled = true;
+          // navigator.spatialNavigationEnabled = true;
           console.log('...............................................adsvisibility!!!!');
         },
         adclose: function() {
           clearTimeout(timeout);
           console.log('ad close 1');
-          navigator.spatialNavigationEnabled = false;
+          // navigator.spatialNavigationEnabled = false;
           console.log('close spatiaNavigation...............');
           containerCfg.onAdFinished();
         },
@@ -940,7 +940,7 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
     });
   } else {
     // we directory enter the game
-    navigator.spatialNavigationEnabled = false;
+    // navigator.spatialNavigationEnabled = false;
     containerCfg.onAdFinished();
   }
 }
