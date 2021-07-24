@@ -47,6 +47,9 @@ function handleKeydownEvent(e) {
 navigator.spatialNavigationEnabled = true;
 console.log("set spatialNavigationEnabled true");
 
+console.log('...........................................................................);
+console.log(navigator.spatialNavigationEnabled);
+
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
   var adFrameSrc = "https://jioads.akamaized.net/betasdk/kaiDisplayAds/testHtml/frame.html";
