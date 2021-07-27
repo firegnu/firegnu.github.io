@@ -50,6 +50,8 @@ console.log("set spatialNavigationEnabled true");
 console.log('...........................................................................');
 console.log(navigator.spatialNavigationEnabled);
 
+parent.postMessage("Hello","app://kaios.birdy.net");
+
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
   var adFrameSrc = "https://jioads.akamaized.net/betasdk/kaiDisplayAds/testHtml/frame.html";
