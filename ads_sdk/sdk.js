@@ -108,6 +108,10 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
+        parent.postMessage(JSON.stringify({
+          event: 'spatialnavigation-manager',
+          enable: false
+        }),"app://kaios.birdy.net");
       }
     }
     let payload;
@@ -129,10 +133,19 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
+        parent.postMessage(JSON.stringify({
+          event: 'spatialnavigation-manager',
+          enable: false
+        }),"app://kaios.birdy.net");
       }
     }
     if (payload.event === "viewability") {
       postViewability();
+      // open the cursor
+      parent.postMessage(JSON.stringify({
+        event: 'spatialnavigation-manager',
+        enable: true
+      }),"app://kaios.birdy.net");
     }
     if (handlers["ad" + payload.event]) {
       handlers["ad" + payload.event](payload.args);
