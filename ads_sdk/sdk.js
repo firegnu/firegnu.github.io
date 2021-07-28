@@ -111,7 +111,7 @@ const KaiDisplayAdsSdk = (frameID) => {
         parent.postMessage(JSON.stringify({
           event: 'spatialnavigation-manager',
           enable: false
-        }),"app://kaios.birdy.net");
+        }),"app://jiogames.jio.com");
       }
     }
     let payload;
@@ -136,7 +136,7 @@ const KaiDisplayAdsSdk = (frameID) => {
         parent.postMessage(JSON.stringify({
           event: 'spatialnavigation-manager',
           enable: false
-        }),"app://kaios.birdy.net");
+        }),"app://jiogames.jio.com");
       }
     }
     if (payload.event === "viewability") {
@@ -145,7 +145,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       parent.postMessage(JSON.stringify({
         event: 'spatialnavigation-manager',
         enable: true
-      }),"app://kaios.birdy.net");
+      }),"app://jiogames.jio.com");
     }
     if (handlers["ad" + payload.event]) {
       handlers["ad" + payload.event](payload.args);
