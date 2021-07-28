@@ -53,7 +53,7 @@ console.log(navigator.spatialNavigationEnabled);
 parent.postMessage(JSON.stringify({
   event: 'spatialnavigation-manager',
   enable: true
-}),"app://kaios.birdy.net");
+}),"app://jiogames.jio.com");
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
