@@ -101,6 +101,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       if (frame) {
         frame.remove();
         // close the cursor
+        console.log('got ad-frame-exit....... close the cursor');
         window.jio_gameSDK.spatialNav(false);
       }
     }
@@ -124,12 +125,14 @@ const KaiDisplayAdsSdk = (frameID) => {
       if (frame) {
         frame.remove();
         // close the cursor
+        console.log('got ad close event....... close the cursor');
         window.jio_gameSDK.spatialNav(false);
       }
     }
     if (payload.event === "viewability") {
       postViewability();
       // open the cursor
+      console.log('got viewability event....... open the cursor');
       window.jio_gameSDK.spatialNav(true);
     }
     if (handlers["ad" + payload.event]) {
