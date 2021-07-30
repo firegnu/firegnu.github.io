@@ -50,10 +50,7 @@ console.log("set spatialNavigationEnabled true");
 console.log('...........................................................................');
 console.log(navigator.spatialNavigationEnabled);
 
-// parent.postMessage(JSON.stringify({
-//   event: 'spatialnavigation-manager',
-//   enable: true
-// }),"app://jiogames.jio.com");
+window.jio_gameSDK.spatialNav(true);
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
@@ -108,10 +105,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        // parent.postMessage(JSON.stringify({
-        //   event: 'spatialnavigation-manager',
-        //   enable: false
-        // }),"app://jiogames.jio.com");
+        window.jio_gameSDK.spatialNav(false);
       }
     }
     let payload;
@@ -133,20 +127,13 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        window.jio_gameSDK.spatialNav(true);
-        // parent.postMessage(JSON.stringify({
-        //   event: 'spatialnavigation-manager',
-        //   enable: false
-        // }),"app://jiogames.jio.com");
+        window.jio_gameSDK.spatialNav(false);
       }
     }
     if (payload.event === "viewability") {
       postViewability();
       // open the cursor
-      // parent.postMessage(JSON.stringify({
-      //   event: 'spatialnavigation-manager',
-      //   enable: true
-      // }),"app://jiogames.jio.com");
+      window.jio_gameSDK.spatialNav(true);
     }
     if (handlers["ad" + payload.event]) {
       handlers["ad" + payload.event](payload.args);
