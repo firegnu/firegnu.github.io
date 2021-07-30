@@ -50,10 +50,10 @@ console.log("set spatialNavigationEnabled true");
 console.log('...........................................................................');
 console.log(navigator.spatialNavigationEnabled);
 
-parent.postMessage(JSON.stringify({
-  event: 'spatialnavigation-manager',
-  enable: true
-}),"app://jiogames.jio.com");
+// parent.postMessage(JSON.stringify({
+//   event: 'spatialnavigation-manager',
+//   enable: true
+// }),"app://jiogames.jio.com");
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
@@ -108,10 +108,10 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        parent.postMessage(JSON.stringify({
-          event: 'spatialnavigation-manager',
-          enable: false
-        }),"app://jiogames.jio.com");
+        // parent.postMessage(JSON.stringify({
+        //   event: 'spatialnavigation-manager',
+        //   enable: false
+        // }),"app://jiogames.jio.com");
       }
     }
     let payload;
@@ -133,19 +133,20 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        parent.postMessage(JSON.stringify({
-          event: 'spatialnavigation-manager',
-          enable: false
-        }),"app://jiogames.jio.com");
+        window.jio_gameSDK.spatialNav(true);
+        // parent.postMessage(JSON.stringify({
+        //   event: 'spatialnavigation-manager',
+        //   enable: false
+        // }),"app://jiogames.jio.com");
       }
     }
     if (payload.event === "viewability") {
       postViewability();
       // open the cursor
-      parent.postMessage(JSON.stringify({
-        event: 'spatialnavigation-manager',
-        enable: true
-      }),"app://jiogames.jio.com");
+      // parent.postMessage(JSON.stringify({
+      //   event: 'spatialnavigation-manager',
+      //   enable: true
+      // }),"app://jiogames.jio.com");
     }
     if (handlers["ad" + payload.event]) {
       handlers["ad" + payload.event](payload.args);
