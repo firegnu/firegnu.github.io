@@ -44,13 +44,6 @@ function handleKeydownEvent(e) {
       break;
   }
 }
-navigator.spatialNavigationEnabled = true;
-console.log("set spatialNavigationEnabled true");
-
-console.log('...........................................................................');
-console.log(navigator.spatialNavigationEnabled);
-
-window.jio_gameSDK.spatialNav(true);
 
 const KaiDisplayAdsSdk = (frameID) => {
   var adFrameOrigin = "https://jioads.akamaized.net";
@@ -98,9 +91,11 @@ const KaiDisplayAdsSdk = (frameID) => {
     //console.log(e);
 
     // Validation of messages
-    // if (e.origin !== adFrameOrigin) {
-    //   return;
-    // }
+    console.log('........................................................................');
+    console.log(e.origin);
+    if (e.origin !== adFrameOrigin) {
+      return;
+    }
     if (e.data === "ad-frame-exit") {
       const frame = getActiveAdFrame();
       if (frame) {
