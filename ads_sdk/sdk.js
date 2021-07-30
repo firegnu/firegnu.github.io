@@ -122,7 +122,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        window.jio_gameSDK.spatialNav(false);
+        window.jio_gameSDK.spatialNav(true);
       }
     }
     if (payload.event === "viewability") {
