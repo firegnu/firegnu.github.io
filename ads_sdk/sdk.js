@@ -100,6 +100,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
+        // close the cursor
         window.jio_gameSDK.spatialNav(false);
       }
     }
@@ -122,7 +123,8 @@ const KaiDisplayAdsSdk = (frameID) => {
       const frame = getActiveAdFrame();
       if (frame) {
         frame.remove();
-        window.jio_gameSDK.spatialNav(true);
+        // close the cursor
+        window.jio_gameSDK.spatialNav(false);
       }
     }
     if (payload.event === "viewability") {
