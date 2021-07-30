@@ -2,7 +2,6 @@ window.addEventListener('load', function() {
   var jioConf = { "autoControl": ["volume", "exit"], "gameName": "Birdy", "gameVersion": "1.2.7" };
   var jioSDK = new Jiogames(jioConf);
   window.jio_gameSDK = jioSDK;
-  window.jio_gameSDK.spatialNav(true);
   console.log('.............................................');
   console.log(jioSDK);
   window.jio_SDK = jioSDK;
