@@ -168,13 +168,14 @@ const KaiDisplayAdsSdk = (frameID) => {
    * Init ad frame
    * @param {HTMLIFrameElement} frame
    */
-  const initFrame = (frame, adspot, pkg, adref, cdata, w, h, fullscreen, advid, uid) => {
+  const initFrame = (frame, adspot, pkg, adref, cdata, w, h, topmargin, fullscreen, advid, uid) => {
     frame.onload = () => {
       frame.style.display = "block";
     };
     frame.style.display = "none";
     frame.style.width = "" + w + "px";
     frame.style.height = "" + h + "px";
+    frame.style.marginTop = "" + topmargin + "px";
     frame.src =
       adFrameSrc +
       "#o=" +
@@ -209,6 +210,7 @@ const KaiDisplayAdsSdk = (frameID) => {
     init: (options) => {
       const w = options.banner ? options.banner.w : window.innerWidth;
       const h = options.banner ? options.banner.h : window.innerHeight;
+      const topmargin = options.banner.topmargin;
       const adspot = options.banner.adspotkey;
       const pkg = options.banner.pkgname;
       const adref = options.banner.adrefresh;
@@ -218,7 +220,7 @@ const KaiDisplayAdsSdk = (frameID) => {
       const fullscreen = options.banner ? false : true;
       console.log("IFrame config : " + adspot + " " + pkg + " " + adref + " " + cdata + " " + w + " " + h + " " + fullscreen);
       Object.assign(handlers, options.listeners || {});
-      initFrame(document.getElementById(frameID), adspot, pkg, adref, cdata, w, h, fullscreen, advid, uid);
+      initFrame(document.getElementById(frameID), adspot, pkg, adref, cdata, w, h, topmargin, fullscreen, advid, uid);
     },
     destroy: () => {
       handlers = {};
