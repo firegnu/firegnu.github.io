@@ -911,7 +911,7 @@ JioKaiAds.prototype.showAds = function(containerCfg) {
     kaiJioAds.init({
       banner: {
         w: window.screen.width,
-        h: window.screen.height, // top bar 26px deducted
+        h: (window.screen.height - 26), // top bar 26px deducted
         adspotkey: '78eab85a',
         pkgname: 'com.kaiostech.birdy',
         adrefresh: 0,
